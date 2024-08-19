@@ -1,0 +1,55 @@
+.project p {
+    margin-bottom: 0;
+    pointer-events: none;
+    /* mix-blend-mode: exclusion; */
+}
+
+.project .project-title {
+    grid-column: 1;
+}
+
+.project .project-type {
+    grid-column: 2;
+}
+
+.project .project-year {
+    grid-column: 3;
+    align-self: right;
+}
+
+.section.selected-projects, .section.archive {
+    display: block;
+}
+
+header {
+    z-index: 1500;
+}
+
+.background-image {
+    z-index: 0;
+}
+
+.section {
+    z-index: 1000;
+}
+
+header .header-links {
+    display: grid;
+    grid-template-columns: 16rem 1fr;
+    grid-column: 1/13;
+    gap: 1.5rem;
+}
+
+.buttons {
+    grid-column: 1;
+}
+
+.filters {
+    grid-column: 2;
+    text-align: right;
+}
+
+
+.grid-container {
+    isolation: isolate;
+}

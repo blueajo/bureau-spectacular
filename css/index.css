@@ -1,0 +1,41 @@
+.background-image {
+    background-color: white;
+}
+
+.background-image p {
+    position: fixed;
+    color: black;
+    pointer-events: all;
+    text-align: center;
+    align-self: center;
+    font-size: 11vw;
+    white-space: nowrap;
+    z-index: 10000;
+    /* mix-blend-mode: soft-light; */
+}
+
+.index-footer {
+    position: fixed;
+    justify-content: space-between;
+    bottom: 1.5rem;
+}
+
+.instagram-footer {
+    right: 1.5rem;
+}
+
+.email-footer {
+    left: 1.5rem;
+}
+
+div.background-image img.project-gif {
+    max-height: 75vh;
+    max-width: 75vw;
+    min-width: 25rem;
+    top: 0vw;
+    left: 0vw;
+}
+
+.header {
+    background-color: rgba(255, 255, 255, 0);
+}

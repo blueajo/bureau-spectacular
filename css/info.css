@@ -1,0 +1,8 @@
+.item-date {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section.people {
+    margin-bottom: 0;
+}

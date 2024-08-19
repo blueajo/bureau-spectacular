@@ -1,0 +1,15 @@
+.body-text {
+    margin-top: 3rem;
+}
+
+.project {
+    grid-column: 1/13;
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+.section {
+    margin-bottom: -3rem;
+}
