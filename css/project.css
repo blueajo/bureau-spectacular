@@ -13,3 +13,8 @@ header p {
 .section {
     margin-bottom: -3rem;
 }
+
+div.section-full p.small-text.selected {
+    white-space: nowrap;
+    width: min-content;
+}

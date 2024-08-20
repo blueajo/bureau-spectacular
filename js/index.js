@@ -7,19 +7,22 @@ const windowSections = [[1,1], [1,2], [1,3], [2,1], [2,2], [2,3], [3,1], [3,2], 
 const gifOrder = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
 window.onload = (event) => {
-    setTimeout(runGif, 500);
+    setTimeout(runGif, 1000);
 };
 
 window.addEventListener("resize", runGif);
 
-document.querySelector('.background-image').addEventListener('click', event => runGif());
+document.querySelector('.background-image').addEventListener('click', event => {
+    clearImages();
+    cleanUp();
+    setTimeout(runGif, 1000);
+});
 
 function runGif() {
-    clearInterval(interval);
     clearImages();
+    cleanUp();
     placeImages();
     interval = setInterval(showImages, 150);
-    console.log(gifImage);
 }
 
 function shuffleArray(array) {
@@ -60,11 +63,15 @@ function showImages() {
             gifImage[gifOrder[gifNumber]].classList.add('visible');
             gifNumber++;
         } else {
-            zIndex = 0;
-            gifNumber = 0;
-            clearInterval(interval);
+            cleanUp();
         }
     }
+}
+
+function cleanUp() {
+    zIndex = 0;
+    gifNumber = 0;
+    clearInterval(interval);
 }
 
 // get width, height of image in viewport units. Place and size image according to vw/vh; Compute random width and height within viewport, make adjustment based on width, height of image to place by center. Clear on window resize.

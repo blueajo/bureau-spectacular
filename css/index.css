@@ -4,14 +4,13 @@
 
 .background-image p {
     position: fixed;
-    color: black;
+    color: rgb(0, 0, 0);
     pointer-events: all;
-    text-align: center;
+    text-align: left;
     align-self: center;
-    font-size: 11vw;
+    font-size: 10vw;
     white-space: nowrap;
     z-index: 10000;
-    /* mix-blend-mode: soft-light; */
 }
 
 .index-footer {

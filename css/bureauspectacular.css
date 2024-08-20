@@ -25,13 +25,13 @@ h1, h2, h3, h4, h5, p, ul, li {
 h1, p.small-text {
     font-size: 1.5rem;
     margin-bottom: 0;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 p {
     font-size: 5rem;
     margin-bottom: 5rem;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 p.small-text {
@@ -45,6 +45,27 @@ p.small-text {
     grid-template-columns: 1fr 28rem 12rem;
     gap: 1.5rem;
     cursor: pointer;
+}
+
+.item-date {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    gap: 1.5rem;
+    cursor: pointer;
+}
+
+.item-date p.item, .item-date p.date {
+    margin-bottom: 0;
+    white-space: nowrap;
+    max-width: min-content;
+}
+
+.item {
+    grid-column: 1;
+}
+
+.date {
+    grid-column: 2;
 }
 
 ul {
@@ -88,11 +109,21 @@ a:link, a:visited {
     text-decoration: none;
 }
 
-a:hover, a:active, a.selected, .selected, .button.on-button, .button:hover, .project:hover, .project.hover, .project-filter:hover, .background-image p:hover {
-    color: rgb(175, 175, 175);
-    /* color: orangered; */
+a:hover, a:active, a.selected, .selected, .button.on-button, .button:hover, .project-filter:hover, .background-image p:hover, .project:hover p, .project.hover p, a.item-date:hover p  {
+    background-color: black;
+    color: cyan;
     cursor: pointer;
-    mix-blend-mode: normal;
+    /* mix-blend-mode: multiply; */
+}
+
+a.project:hover, a.project:active, a.item-date:hover {
+    background: none;
+    color: black;
+}
+
+.project p {
+    white-space: nowrap;
+    max-width: min-content;
 }
 
 .selected {
@@ -248,7 +279,7 @@ div.background-image img.work-image {
 /* media queries */
 
 @media (min-width: 85rem) and (max-width: 100rem) {
-    .project p, .item-date {
+    .project p, .item-date p {
         font-size: 4rem;
     }
 
@@ -258,7 +289,7 @@ div.background-image img.work-image {
 }
 
 @media (min-width: 60rem) and (max-width: 85rem) {
-    .project p, .item-date {
+    .project p, .item-date p {
         font-size: 3rem;
     }
 
@@ -268,7 +299,7 @@ div.background-image img.work-image {
 }
 
 @media  (min-width: 45rem) and (max-width: 60rem) {
-    .project p, .item-date {
+    .project p, .item-date p {
         font-size: 2rem;
     }
 
@@ -287,7 +318,7 @@ div.background-image img.work-image {
 }
 
 @media  (max-width: 45rem) {
-    .project p, .item-date {
+    .project p, .item-date p {
         font-size: 1.5rem;
     }
 
