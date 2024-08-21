@@ -37,19 +37,20 @@ function clearImages() {
 }
 
 function placeImages() {
-    shuffleArray(windowSections);
-    shuffleArray(gifOrder);
-
     let i = 0;
     let heightBounds = window.innerHeight/5;
     let widthBounds = window.innerWidth/5;
 
     gifImage.forEach(image => {
+        if (i % 9 == 0) {
+            shuffleArray(windowSections);
+            shuffleArray(gifOrder);
+        }
         let dimensions = image.getBoundingClientRect();
         let imageTop = (Math.random()*heightBounds) - dimensions.height/2;
         let imageLeft = (Math.random()*widthBounds) - dimensions.width/2;
-        image.style.top = imageTop + (windowSections[i][0]*heightBounds) + "px";
-        image.style.left = imageLeft + (windowSections[i][1]*widthBounds) + "px";
+        image.style.top = imageTop + (windowSections[i % 9][0]*heightBounds) + "px";
+        image.style.left = imageLeft + (windowSections[i % 9][1]*widthBounds) + "px";
         i++;
     });
 }
@@ -58,9 +59,9 @@ function placeImages() {
 function showImages() {
     if (document.hasFocus()) {
         if (gifLength > gifNumber) {
-            console.log(gifOrder[gifNumber]);
-            gifImage[gifOrder[gifNumber]].style.zIndex = gifNumber;
-            gifImage[gifOrder[gifNumber]].classList.add('visible');
+            let indexNumber = (gifNumber % 9);
+            gifImage[gifOrder[indexNumber] + (Math.floor(gifNumber/9)*9)].style.zIndex = gifNumber;
+            gifImage[gifOrder[indexNumber] + (Math.floor(gifNumber/9)*9)].classList.add('visible');
             gifNumber++;
         } else {
             cleanUp();

@@ -54,10 +54,14 @@ p.small-text {
     cursor: pointer;
 }
 
-.item-date p.item, .item-date p.date {
+.item-date p, .project p {
+    display: inline;
     margin-bottom: 0;
-    white-space: nowrap;
     max-width: min-content;
+}
+
+.date p  {
+    text-wrap: nowrap;
 }
 
 .item {
@@ -119,11 +123,6 @@ a:hover, a:active, a.selected, .selected, .button.on-button, .button:hover, .pro
 a.project:hover, a.project:active, a.item-date:hover {
     background: none;
     color: black;
-}
-
-.project p {
-    white-space: nowrap;
-    max-width: min-content;
 }
 
 .selected {

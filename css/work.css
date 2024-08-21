@@ -1,7 +1,6 @@
-.project p {
+.project div p {
     margin-bottom: 0;
     pointer-events: none;
-    /* mix-blend-mode: exclusion; */
 }
 
 .project .project-title {
