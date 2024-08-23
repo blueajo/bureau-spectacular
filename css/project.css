@@ -18,3 +18,15 @@ div.section-full p.small-text.selected {
     white-space: nowrap;
     width: min-content;
 }
+
+.header p.small-text.selected {
+    color: cyan;
+    background-color: black;
+}
+
+.header p.small-text {
+    display:inline;
+    width: min-content;
+    color: black;
+    background-color: white;
+}
